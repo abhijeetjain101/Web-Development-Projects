@@ -1,0 +1,291 @@
+/* CSS Reset */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables */
+:root{
+    --navbar-height: 59px;
+}
+
+/* Logo */
+#logo{
+    font-family: 'Girassol', cursive;
+    border: 2px solid white;
+    margin: 10px 34px;
+    
+    
+}
+
+#logo h4{
+    color: white;
+    padding: 5px 10px;
+}
+
+/* Navigation Bar */
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    overflow:hidden;
+    
+}
+
+.bgn{
+    background-color: #000;
+}
+
+#navbar{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    /* position: sticky; */
+    top: 0;
+}
+
+/* Navigation bar list styling */
+#navbar ul{
+    display: flex;
+    margin-left: 770px;
+}
+
+#navbar::before{
+    content:"";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+#navbar ul li{
+    /* color: white; */
+    list-style: none;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.3rem;
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    margin: 0px 22px;
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-color: white;
+    transform: scale(0.8);
+}
+
+/* Home Section */
+#bgnav{
+    background: url('../img/pexels-stephan-louis-5330287.jpg') no-repeat center center/cover;
+    height: 934px;
+    position: relative;
+    opacity: 0.89;
+}
+
+/* #home::before{
+    border: 2px solid rgb(255, 0, 136);
+    content:"";
+    position:absolute;
+    height: 1080px;
+    width: 100%;
+    opacity: 0.89;
+    z-index: -1;
+} */
+
+#home{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* padding: 3px 200px; */
+    justify-content: center;
+    align-items: center;
+}
+
+#home h1{
+    font-family: 'Baloo Tamma 2', cursive;
+    color: white;
+    text-align: center;
+}
+
+#home p{
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+/* Utility Class */
+.h-primary{
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 3.8rem;
+    padding: 12px;
+    /* color: white; */
+    
+
+}
+.h-secondary{
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 2.8rem;
+    padding: 12px;
+
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: tomato;
+    color: white;
+    margin: 17px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center{
+    text-align: center;
+}
+
+/* About Us Section */
+#aboutus{
+    height: 100vh;
+    border-top: 2px solid black;
+}
+
+#aboutus h1{
+    margin-top: 72px;
+    /* border: 2px solid red; */
+}
+
+#aboutus p{
+    justify-content: center;
+    align-items: center;
+    margin: 0px 100px;
+    font-size: 30px;
+}
+
+
+
+/* Model Section */
+#models{
+    /* border: 2px solid blue; */
+    border-top: 2px solid black;
+    width: 100%;
+    height: 100vh;
+}
+
+#models h1{
+    margin-top: 75px;
+}
+
+
+#models-container{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+#models-container .box{
+    /* border: 2px solid brown;   */
+    border-radius: 28px;
+    padding: 4px;
+    margin: 3px 0px;
+}
+
+#models-container .box img{
+    height: 400px;
+    display: flex;
+    
+}
+
+#models-container .box p{
+    font-family: 'Baloo Tamma 2', cursive;
+    padding: 1px 34px;
+}
+
+/* Dealer section */
+#dealer-section {
+    /* border: 2px solid chocolate; */
+    border-top: 2px solid black;
+    height: 880px;
+}
+
+#dealer-section h1 {
+    margin-top: 70px;
+}
+
+
+/* Contact Section */
+#contact{
+    /* border: 2px solid red; */
+    height: 900px;
+}
+
+#contact h1{
+    margin-top: 70px;
+}
+
+form{
+    padding: 0px 100px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+textarea{
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+input[type=submit] {
+    background-color: #777777; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 55px 795px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: #6ce971;
+}
+
+label{
+    font-weight:bold;
+}
+
+span{
+    color: red;
+}

@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* 1 rem = 10px */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins','sans-serif';
+    font-weight: 600;
+    font-size: 2.5rem;
+    background: linear-gradient(70deg,grey, white);
+}
+
+/* navbar */
+
+#navbar {
+    top: 0;
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(42, 41, 41);
+    margin: 1rem 2rem;
+    border-radius: 10rem;
+    position: fixed;
+}
+
+#navbar ul li {
+    display: inline-block ;
+    text-align: center;
+    align-items: center;
+    margin: 1rem 2rem;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar  span:hover {
+    text-shadow: 0 0 .5rem #fdfdfd;
+    text-decoration-style: wavy;
+}
+
+/* welcome section */
+#welcome-section {
+    /* background-image: url('https://source.unsplash.com/1600x900/?scifi'); */
+    background-image: url('https://source.unsplash.com/random');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-blend-mode:screen; */
+    height: 100vh;
+}
+
+.content {
+    top: 25rem;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.192);
+    margin: 0rem 0rem;
+}
+
+#welcome-section h1{
+    color: white;
+}
+
+#welcome-section span{
+    color: rgb(121, 1, 1);
+}
+
+/* projects section */
+#projects {
+    height: 100vh;
+}
+
+#project-head {
+    top: 10rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 20rem auto;
+    margin-bottom: 6rem;
+}
+
+.project-grid span {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.project-grid span:hover {
+    color: whitesmoke;
+    text-shadow: 0 0 .5rem #fdfdfd;
+}
+
+.project-image {
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    /* transform: scale(.25);     */
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* contact section */
+#contact {
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    /* background-image: url('https://source.unsplash.com/1600x900/?nature,water'); */
+    background-image: url('https://source.unsplash.com/1600x900/?textures-patterns');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#contact h1 {
+    font-size: 10rem;
+}
+
+.fab {
+    font-family: 'fontawesome';
+}
+
+.fab:hover{
+    color: white;
+    text-shadow: 0 0 .5rem #fdfdfd;
+}
+
+.contact-list {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 15em;
+}
+
+.contact-list i {
+    padding: 10rem;
+}
+
+.contact-list i a {
+    padding: 10rem;
+    text-decoration: none;
+    appearance: none;
+}
+
+@media screen and (max-width:600px) {
+    body {
+        font-size: 1rem;
+    }
+}

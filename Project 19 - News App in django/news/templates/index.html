@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+	<div class="card-group pt-5">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 d-flex flex-fill justify-content-center">
+			{% for info in obj %}
+			<div class="cardgel card rounded bg-dark col m-3">
+				<a href="{% url 'news' info.id %}"><img src="{{ info.img.url }}" class="card-img-top rounded-top mx-auto d-block"
+						alt="..."></a>
+				<div class="card-body position-relative">
+					<a href="{% url 'news' info.id %}" class="text-decoration-none text-reset">
+						<h5 class="card-title text-light">{{ info.title }}</h5>
+					</a>
+					<span class="card-text text-light d-flex">{{ info.description|slice:":100" }}</span> <!---text-truncate--->
+
+					<a class="text-decoration-none text-warning" href="{% url 'news' info.id %}">Read More</a>
+
+					<!-- Votes -->
+
+					<button type="button" class="btn btn-light ms-1 position-absolute bottom-0 end-0 trnaslate-middle">
+						<span class="badge text-dark">
+							{% if info.vote_total > 9 %}
+							{{info.vote_total}} Vote{{ info.vote_total | pluralize:"s"}}
+							{% else %}
+							{{info.vote_total}} Vote
+							{% endif %}
+						</span>
+
+					</button>
+
+
+					<!-- Tags -->
+
+
+					<div class="card-footer">
+						<!-- <p class="card-text p-4 position-absolute bottom-0 start-0"><small class="text-muted">Last updated {{ info.created }}</small></p> -->
+						<small class="text-muted">Last updated {{ info.created }}</small>
+					</div>
+
+					<!-- {% for tag in obj.tags.all %} -->
+					<span class="badge bg-light text-dark">ABCD</span>
+					<!-- {% endfor %} -->
+
+				</div>
+			</div>
+			<!-- {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %} -->
+			<!-- {% endif %} -->
+			{% endfor %}
+		</div>
+	</div>
+
+
+</section>
+
+{% endblock %}
