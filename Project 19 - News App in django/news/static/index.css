@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgb(80, 80, 80);
+}
 .card-img-top {
     width: 100%;
     height: 15vw;
@@ -19,5 +21,4 @@
 .cardgel:hover {
     transform: scale(1.1);
     box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
-    color: red;
   }

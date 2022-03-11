@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Projects</h1>
+{% comment %} <h1>Projects</h1>
 
 <table>
     <tr>
@@ -26,7 +26,7 @@
     {% endfor %}
 </table>
 
-<hr>
+<hr> {% endcomment %}
 
 <!-- Main Section -->
 <main class="projects">
@@ -37,11 +37,11 @@
             </div>
 
             <div class="hero-section__search">
-                <form class="form" action="#" method="get">
+                <form id="searchForm" class="form" action="{% url 'projects' %}" method="get">
                     <div class="form__field">
                         <label for="formInput#search">Search By Projects </label>
-                        <input class="input input--text" id="formInput#search" type="text" name="text"
-                            placeholder="Search by Project Title" />
+                        <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                            value="{{search_query}}" placeholder="Search by Project Title" />
                     </div>
 
                     <input class="btn btn--sub btn--lg" type="submit" value="Search" />
@@ -82,6 +82,8 @@
             </div>
         </div>
     </section>
+
+    {% include 'pagination.html' with queryset=projects custom_range=custom_range %}
 
 </main>
 

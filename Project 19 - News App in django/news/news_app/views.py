@@ -26,7 +26,7 @@ def home(request):
 def news(request, pk):
     obj = NewsContent.objects.get(id=pk)
     tags = obj.tags.all()
-    print('obj:', obj)
+    # print('obj:', obj)
     context = {
         'obj': obj,
         'tags': tags,
@@ -38,7 +38,8 @@ def createNews(request):
     form = NewsForm()
 
     if request.method == 'POST':
-        form = NewsForm(request.POST)
+        # print(request.POST)
+        form = NewsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home')
@@ -47,6 +48,31 @@ def createNews(request):
         'form': form
     }
     return render(request,"news_app_form.html", context)
+
+
+def updateNews(request,pk):
+    news = NewsContent.objects.get(id=pk)
+    form = NewsForm(instance=news)
+
+    if request.method == 'POST':
+        # print(request.POST)
+        form = NewsForm(request.POST, instance=news)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    context = {
+        'form': form
+    }
+    return render(request,"news_app_form.html", context)
+
+def deleteNews(request, pk):
+    object = NewsContent.objects.get(id=pk)
+    if request.method == 'POST':
+        object.delete()
+        return redirect('home')
+    context = {'object': object}
+    return render(request, 'delete_template.html', context)
 
 
 def nation(request):

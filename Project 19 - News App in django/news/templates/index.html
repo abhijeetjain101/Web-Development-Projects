@@ -16,6 +16,8 @@
 					<span class="card-text text-light d-flex">{{ info.description|slice:":100" }}</span> <!---text-truncate--->
 
 					<a class="text-decoration-none text-warning" href="{% url 'news' info.id %}">Read More</a>
+					<a class="text-decoration-none text-warning" href="{% url 'update-news' info.id %}">Update</a>
+					<a class="text-decoration-none text-warning" href="{% url 'delete-news' info.id %}">Delete</a>
 
 					<!-- Votes -->
 
@@ -37,11 +39,11 @@
 					<div class="card-footer">
 						<!-- <p class="card-text p-4 position-absolute bottom-0 start-0"><small class="text-muted">Last updated {{ info.created }}</small></p> -->
 						<small class="text-muted">Last updated {{ info.created }}</small>
+						{% for tag in obj.tags.all %}
+						<span class="badge bg-light text-dark">{{tag}} ABCD</span>
+						{% endfor %}
 					</div>
 
-					<!-- {% for tag in obj.tags.all %} -->
-					<span class="badge bg-light text-dark">ABCD</span>
-					<!-- {% endfor %} -->
 
 				</div>
 			</div>
