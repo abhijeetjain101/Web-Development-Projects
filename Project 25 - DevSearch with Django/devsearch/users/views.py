@@ -11,6 +11,8 @@ from .forms import CustomUserCreationForm, ProfileForm, SkillForm, MessageForm
 from .utils import searchProfiles, paginationProfiles
 
 # Create your views here.
+
+
 def loginUser(request):
     page = 'login'
 

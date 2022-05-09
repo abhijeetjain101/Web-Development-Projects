@@ -5,183 +5,580 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potential X</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Potential X - Gym Landing Page Template</title>
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!--=============== GOOGLE FONTS ===============-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-    <style>
-        /* CSS Reset */
-        body {
-            color: white;
-            /* margin: 0px;
-            padding: 0px; */
-            background: url('images/pexels-sabel-blanco-1480520.jpg') no-repeat;
-            background-size: 1920px;
-            height: 1080px;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-        .left {
-            position: absolute;
-            left: 100px;
-            top: 22px;
-            /* border: 2px solid red; */
-            display: inline-block;
-        }
-
-        .left img{
-            width: 100px;
-            filter: invert();
-            margin: 3px 19px;
-        }
-
-        .left div{
-            font-size: 26px;
-            text-align: center;
-            line-height: 20px;
-        }
-
-        .left div span{
-            color: yellow;
-        }
-
-        .mid {
-            margin: 50px 1030px;
-            /*margin: auto will center it*/
-            /* border: 2px solid green; */
-            width: 40%;
-        }
-
-        .right {
-            position: absolute;
-            right: 55px;
-            top: 64px;
-            /* border: 2px solid yellow; */
-            display: inline-block;
-        }
-
-        .navbar {
-            display: inline-block;
-        }
-
-        .navbar li {
-            display: inline-block;
-            font-size: 20px;
-        }
-
-        .navbar li a {
-            color: white;
-            text-decoration: none;
-            padding: 23px;
-        }
-
-        .navbar li a:hover,
-        .navbar li a.active {
-            color: Yellow;
-        }
-
-        /* .btn{
-            font-family: 'Source Sans Pro', sans-serif;
-            margin: 0px 9px;
-            color: white;
-            background-color: black;
-            padding: 4px, 14px;
-            border: 2px solid grey;
-            border-radius: 10px;
-            font-size: 20 px;
-            cursor: pointer;
-        }
-
-        .btn:hover{
-            background-color: grey;
-            color: yellow;
-        } */
-        .container{
-            /* border: 2px solid white; */
-            margin: 180px 90px;
-            padding: 14px;
-            width: 33%;
-            /* border-radius: 28px; */
-
-        }
-
-        div.container h2{
-            font-family: 'Merriweather Sans', sans-serif;
-            font-size: 60px;
-            margin: 2px 2px;
-            
-        }
-        div.container h3 {
-            font-family: 'Merriweather Sans', sans-serif;
-            font-size: 40px;
-            margin: 2px 2px;
-        }
-
-        .content{
-            margin: 20px 0px;
-        }
-
-        .joinbtn{
-            color:white;
-            margin: 250px 0px;
-            font-size: large;
-            background-color: rgb(83, 83, 83);
-            padding:10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .joinbtn:hover{
-            color:black;
-            background-color: rgb(255, 238, 0);
-        }
-    </style>
 </head>
 
 <body>
-    <header class="header">
-        <!-- left box for logo -->
-        <div class="left">
-            <img src="images/clipart1518054.png" alt="error loading image">
-            <div>Potential
-                <!-- <span>X</span> -->
-                <span><strong>X</strong></span>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- logo -->
+            <a href="#" class="nav__logo" id="nav-logo">
+                <!-- <img src="images/clipart1518054.png" alt="error loading image"> -->
+                <div>Potential
+                    <span><strong>X</strong></span>
+                </div>
+            </a>
+            <!-- mid box for navbar -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About Us</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#popular" class="nav__link">Our Programs</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#featured" class="nav__link">Pricing</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="./contact.html" class="nav__link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+            <!-- right box for buttons -->
+            <!-- <div class="right">
+                <button class="btn">Call Us Now</button>
+                <button class="btn">Email Us</button>
+            </div> -->
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        CHOOSE THE BEST FITNESS TRAINING
+                    </h1>
+                    <!-- <img class="home_img" src="./images/pexels-sabel-blanco-1480520.jpg" alt="Background_img"> -->
+                    <div class="home__subtitle">
+                        <h2> IN BEST FITNESS </h2>
+                        <h3>STUDIO IN TOWN</h3></strong>
+                    </div>
+
+                    <div class="home__data content">
+                        Being physically and mentally fit is necessary for an individual to live a happy, long life.
+                        Typically, exercise is one of the best ways to keep a person healthy. Hence, it is always best
+                        to find a workout routine no matter how busy you are. With the numerous diseases that spread in
+                        the world today, many individuals realized the essence of workout. Specifically, having a
+                        workout routine will give an individual the greatest physical, mental, and social benefits.
+                        Accordingly, exercise will help you increase energy levels, reduce chronic disease risk, lose
+                        weight, and help improve brain health and memory. With such benefits, you probably will love to
+                        do workout routines soon. Luckily, you don’t need to do it yourself as various personal
+                        trainers, or professional fitness coaches exist to provide the help you need. And joining
+                        fitness classes is just at your fingertips.
+                    </div>
+
+                    <div class="home__button">
+                        <button class="joinbtn button">Join Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--==================== ABOUT ====================-->
+    <section class="about section" id="about">
+        <div class="about__container container grid">
+            <div class="about__group">
+                <img src="images/pexels-sabel-blanco-1480520.jpg" alt="" class="about__img">
+
+                <div class="about__card">
+                    <h3 class="about__card-title">2.500+</h3>
+                    <p class="about__card-description">
+                        Fitness Training done.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about__data">
+                <h2 class="section__title about__title">
+                    Trainers With <br> Knowledgebase And Certfications
+                </h2>
+
+                <p class="about__description">
+                    Our virtual training platform offers world-class, signature programming designed to get you stronger
+                    and fitter, faster than ever before, and ready to win at the sport of life.
+                </p>
+
+                <a href="#" class="button">Know More</a>
             </div>
         </div>
-        <!-- mid box for navbar -->
-        <div class="mid">
-            <ul class="navbar">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Programs</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-        <!-- right box for buttons -->
-        <!-- <div class="right">
-            <button class="btn">Call Us Now</button>
-            <button class="btn">Email Us</button>
-        </div> -->
-    </header>
-    <div class="container">
-        <div><strong></strong><h2>  THE BEST FITNESS </h2><h3>STUDIO IN TOWN</h3></strong>
-        
-        <div class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio tenetur natus voluptatem ipsum voluptatum possimus modi molestiae voluptatibus, earum, repellendus eaque esse quod architecto at quos voluptate ullam aspernatur doloribus. Veniam odio, numquam vel voluptatem esse dolor excepturi ipsam! Vel atque praesentium saepe ad magnam deleniti sed dolorum quo tenetur.</div>
-        </div>    
+    </section>
 
-        <div>
-            <button class="joinbtn">Join Now</button>
+    <!--==================== POPULAR ====================-->
+    <section class="popular section" id="popular">
+        <h2 class="section__title">
+            Choose your fitness plan <br> With Potential X
+        </h2>
+
+        <div class="popular__container container swiper">
+            <div class="swiper-wrapper">
+
+                <article class="popular__card swiper-slide">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="popular__title">Muscle Building </h1>
+                    <h3 class="popular__subtitle">Plan</h3>
+
+                    <img src="images/Muscle_building.png" alt="" class="popular__img">
+
+                    <div class="popular__data">
+                        <div class="popular__data-group">
+                            Our workouts database has hundreds of free workout plans designed for building muscle. The
+                            workouts are created by fitness experts and come with a free downloadable PDF you can
+                            reference when training. Use the filters below to find the best workout for your goal,
+                            training experience and equipment access.
+                        </div>
+
+                    </div>
+
+                    <h3 class="popular__price">$98,900</h3>
+
+                    <button class="button popular__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="popular__title">Fat Loss </h1>
+                    <h3 class="popular__subtitle">Plan</h3>
+
+                    <img src="images/Fat_loss.png" alt="" class="popular__img">
+
+                    <div class="popular__data">
+                        <div class="popular__data-group">
+                            ake your fat loss goals to the next level with our huge database of free fat-burning
+                            workouts designed for men and women. If you need somewhere to start, check out our 12 Week
+                            Fat Destroyer Workout Program. For more fat loss training tips and expert guides, you'll
+                            want to head over to our fat loss articles.
+                        </div>
+
+                    </div>
+
+                    <h3 class="popular__price">$45,900</h3>
+
+                    <button class="button popular__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="popular__title">Sports Performance </h1>
+                    <h3 class="popular__subtitle">Plan</h3>
+
+                    <img src="images/Sports_Performance.png" alt="" class="popular__img">
+
+                    <div class="popular__data">
+                        <div class="popular__data-group">
+                            Get the edge on your competitors by increasing your performance. Find the best workout for
+                            your fitness goal, experience level, training style and equipment access. Each workout comes
+                            with a free downloadable PDF you can reference when training.
+                        </div>
+
+                    </div>
+
+                    <h3 class="popular__price">$160,900</h3>
+
+                    <button class="button popular__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="popular__title">Increase Strength for Women</h1>
+                    <h3 class="popular__subtitle">Plan</h3>
+
+                    <img src="images/Strngth_for_women.png" alt="" class="popular__img">
+
+                    <div class="popular__data">
+                        <div class="popular__data-group">
+                            Increasing strength is no easy feat, but our huge database of strength-building workout
+                            plans can help you achieve your goals. If you're a beginner, we recommend checking out our
+                            5x5 Novice Strength Building Program.
+                        </div>
+
+                    </div>
+
+                    <h3 class="popular__price">$170,500</h3>
+
+                    <button class="button popular__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="popular__title">Abs Building </h1>
+                    <h3 class="popular__subtitle">Plan</h3>
+
+                    <img src="images/Abs.png" alt="" class="popular__img">
+
+                    <div class="popular__data">
+                        <div class="popular__data-group">
+                            Our database of free ab workout plans will help you build a strong and sturdy core. Find the
+                            best workout for your experience level, training style, and equipment access. For more
+                            helpful information on ab specific training, check out Freaky Abs! The Monster Guide To A
+                            Shredded Six Pack.
+                        </div>
+
+                    </div>
+
+                    <h3 class="popular__price">$180,000</h3>
+
+                    <button class="button popular__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
         </div>
-    </div>
+    </section>
+
+    <!--==================== FEATURES ====================-->
+    <section class="features section">
+        <h2 class="section__title">
+            More Features
+        </h2>
+
+        <div class="features__container container grid">
+            <div class="features__group">
+                <img src="images/More_features.png" alt="" class="features__img">
+
+                <div class="features__card features__card-1">
+                    <h3 class="features__card-title">Nutrition</h3>
+                    <p class="features__card-description">Guidance <br> Chargin</p>
+                </div>
+
+                <div class="features__card features__card-2">
+                    <h3 class="features__card-title">Excercise</h3>
+                    <p class="features__card-description">Training <br> Range</p>
+                </div>
+
+                <div class="features__card features__card-3">
+                    <h3 class="features__card-title">Quadriceps</h3>
+                    <p class="features__card-description">Build <br> Travel</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--==================== FEATURED ====================-->
+    <section class="featured section" id="featured">
+        <h2 class="section__title">
+            Featured Fitness Plans
+        </h2>
+
+        <div class="featured__container container">
+            <ul class="featured__filters">
+                <li>
+                    <button class="featured__item active-featured" data-filter="all">
+                        <span>All</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="featured__item" data-filter=".muscle">
+                        <img src="images/logo_4.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="featured__item" data-filter=".fatloss">
+                        <img src="images/logo_5.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="featured__item" data-filter=".cardio">
+                        <img src="images/logo_2.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="featured__item" data-filter=".abs">
+                        <img src="images/logo_6.png" alt="">
+                    </button>
+                </li>
+            </ul>
+
+            <div class="featured__content grid">
+                <article class="featured__card mix muscle">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="featured__title">Muscle Building</h1>
+
+                    <h3 class="featured__subtitle">Plan</h3>
+
+                    <img src="images/More_features.png" alt="" class="featured__img">
+
+                    <h3 class="featured__price">$98,900</h3>
+                    <button class="button featured__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+                <article class="featured__card mix fatloss">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="featured__title">Fat loss</h1>
+
+                    <h3 class="featured__subtitle">Plan</h3>
+
+                    <img src="images/Fat_loss.png" alt="" class="featured__img">
+
+                    <h3 class="featured__price">$45,900</h3>
+                    <button class="button featured__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+                <article class="featured__card mix cardio">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="featured__title">Sports Performance</h1>
+
+                    <h3 class="featured__subtitle">Plan</h3>
+
+                    <img src="images/Sports_Performance.png" alt="" class="featured__img">
+
+                    <h3 class="featured__price">$160,900</h3>
+                    <button class="button featured__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+                <article class="featured__card mix abs">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="featured__title">Abs Building</h1>
+
+                    <h3 class="featured__subtitle">plan</h3>
+
+                    <img src="images/abs_2.png" alt="" class="featured__img">
+
+                    <h3 class="featured__price">$180,000</h3>
+                    <button class="button featured__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+                <article class="featured__card mix muscle">
+                    <div class="shape shape__smaller"></div>
+
+                    <h1 class="featured__title">Strength Building</h1>
+
+                    <h3 class="featured__subtitle">For Women</h3>
+
+                    <img src="images/Strngth_for_women.png" alt="" class="featured__img">
+
+                    <h3 class="featured__price">$126,900</h3>
+                    <button class="button featured__button">
+                        <i class="ri-shopping-bag-2-line"></i>
+                    </button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== OFFER ====================-->
+    <section class="offer section">
+        <div class="offer__container container grid">
+            <img src="images/pexels-li-sun-2294361.jpg" alt="" class="offer__bg">
+
+            <div class="offer__data">
+                <h2 class="section__title offer__title">
+                    Do You Want To Recieve <br> Special Offers?
+                </h2>
+
+                <p class="offer__description">
+                    Be the first to recieve all the information about our fitness plans
+                    by email by subscribing to our mailing list.
+                </p>
+
+                <a href="#" class="button">
+                    Subscribe Now
+                </a>
+            </div>
+
+            <!-- <img src="images/offer.png" alt="" class="offer__img"> -->
+        </div>
+    </section>
+
+    <!--==================== LOGOS ====================-->
+    <section class="logos section">
+        <h2 class="logos__title">
+            Our Clients
+        </h2>
+        <div class="logos__container container grid">
+            <div class="logos__content">
+                <img src="images/logo1.png" alt="" class="logos__img">
+            </div>
+            <div class="logos__content">
+                <img src="images/logo2.png" alt="" class="logos__img">
+            </div>
+            <div class="logos__content">
+                <img src="images/logo3.png" alt="" class="logos__img">
+            </div>
+            <div class="logos__content">
+                <img src="images/logo4.png" alt="" class="logos__img">
+            </div>
+            <div class="logos__content">
+                <img src="images/logo5.png" alt="" class="logos__img">
+            </div>
+            <div class="logos__content">
+                <img src="images/logo6.png" alt="" class="logos__img">
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="shape shape__big"></div>
+        <div class="shape shape__small"></div>
+
+        <div class="footer__container container grid">
+            <div class="footer_content">
+                <a href="#" class="footer__logo">
+                    Potential <strong>X</strong> 
+                </a>
+
+                <p class="footer__description">We offer best fitness training <br> to our clients all over the
+                    world.</p>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    Company
+                </h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="" class="footer__link">About</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__link">Training Plan</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__link">History</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__link">Shop</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    Information
+                </h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="" class="footer__link">Request a quote</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__link">Find a dealer</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__link">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__link">Services</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    Follow Us
+                </h3>
+
+                <ul class="footer__social">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://www.twitter.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-twitter-line"></i>
+                    </a>
+                    <a href="https://www.dribble.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-dribble-line"></i>
+                    </a>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footer__copy">
+            &#169; Potential X. All rights reserved
+        </span>
+    </footer>
 
    
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!--=============== MIXITUP JS ===============-->
+    <script src="js/mixitup.min.js"></script>
+
+     <!--========== Main JS ==========-->
+     <script src="js/main.js"></script>
 </body>
 
 </html>

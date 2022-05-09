@@ -1,0 +1,12 @@
+Create a file jeetportfolio.xyz.conf and insert:
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerAlias 192.168.1.1 
+        DocumentRoot /somewhere/public_html
+        <Directory /somewhere/public_html/>
+         Options Indexes FollowSymLinks MultiViews ExecCGI
+         AllowOverride Authconfig FileInfo
+         Require all granted
+        </Directory>
+</VirtualHost>

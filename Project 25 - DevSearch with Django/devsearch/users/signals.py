@@ -8,6 +8,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 # @receiver(post_save, sender=Profile)
+
 def createProfile(sender, instance, created, **kwargs):
     print('Profile signal triggered')
     if created:
@@ -40,9 +41,12 @@ def updateUser(sender, instance, created, **kwargs):
         user.save()
 
 def deleteUser(sender, instance, **kwargs):
-    user=instance.user
-    user.delete()
-    print('Deleting user...')
+    try: 
+        user=instance.user
+        user.delete()
+        print('Deleting user...')
+    except: 
+        pass
 
 # This is another way of doing this instead we will use decorators 
 post_save.connect(createProfile, sender=User)

@@ -12,10 +12,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+
+import cloudinary 
+import cloudinary.uploader 
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -25,13 +31,13 @@ SECRET_KEY = 'django-insecure-0jtz6fn&+0y3q6&3$ef#ap^bd@wqsy2bb2^es7$vxf!7o9^17s
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['devsearch-jeet.herokuapp.com/', "localhost"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,11 +47,18 @@ INSTALLED_APPS = [
     
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
+
+    'storages'
+
+    # 'cloudinary_storage',
+    # 'cloudinary'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,16 +91,31 @@ TEMPLATES = [
 WSGI_APPLICATION = 'devsearch.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Devsearch_DB',
+        'USER': 'postgres',
+        'PASSWORD': 'abhijain1994',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -126,26 +154,59 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'dannydaniels665@gmail.com'
+EMAIL_HOST_USER = 'abhijeetjain@rocketmail.com'
 EMAIL_HOST_PASSWORD = ''
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
-STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'static')
-    BASE_DIR / 'static'
-]
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+
+# Try1
+# if DEBUG:
+#     STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+#     # BASE_DIR / 'static'
+#     ]
+# else:
+#     # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+# Try2
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+   
+    
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = BASE_DIR / 'static'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage' 
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# CLOUDINARY_STORAGE = {
+#      'CLOUD_NAME': 'dt7azg9og', 
+#      'API_KEY': '894736995689677', 
+#      'API_SECRET': '-qTsTP7TKUlJzoD8L34UHsS96tE'
+#     }
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
